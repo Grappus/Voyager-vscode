@@ -1,3 +1,2 @@
 # VSCODE-PACKAGE-EXPLORER
-VSCode extension to search, add, remove, read packages without touching terminal or browser.
-( under development )
+vscode extension to add, search, remove, update packages without touching terminal, package.json or browser.( under development )

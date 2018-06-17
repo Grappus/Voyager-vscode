@@ -120,7 +120,7 @@ class PackageDetail extends Component {
             <div className="controls--">
               {npm && (
                 <a
-                  target="_blank" rel="noopener noreferrer"
+                  target="_blank"
                   href={pkg.links && pkg.links.npm}
                   className="stat-box"
                 >
@@ -134,7 +134,7 @@ class PackageDetail extends Component {
               )}
               {github && (
                 <a
-                  target="_blank" rel="noopener noreferrer"
+                  target="_blank"
                   href={pkg.links && pkg.links.repository}
                   className="stat-box"
                 >
@@ -144,7 +144,7 @@ class PackageDetail extends Component {
               )}
               {github && (
                 <a
-                  target="_blank" rel="noopener noreferrer"
+                  target="_blank"
                   href={pkg.links && pkg.links.repository}
                   className="stat-box"
                 >
@@ -154,7 +154,7 @@ class PackageDetail extends Component {
               )}
               {github && (
                 <a
-                  target="_blank" rel="noopener noreferrer"
+                  target="_blank"
                   href={pkg.links && pkg.links.repository}
                   className="stat-box"
                 >
@@ -184,7 +184,7 @@ class PackageDetail extends Component {
                   Object.keys(pkg.links).map(link => (
                     <a
                       href={pkg.links[link]}
-                      target="_blank" rel="noopener noreferrer"
+                      target="_blank"
                       className="link-box"
                     >
                       ↪ {link}

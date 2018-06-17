@@ -17,22 +17,16 @@ function activate(context) {
       );
       // And set its HTML content
       const extensionPath = context.extensionPath;
-      const cssPath = extensionPath+"/view/static/css/main.css";
-      const jsPath = extensionPath+"/view/static/js/main.js";
-      fs.readFile(cssPath,"utf-8", (err, cssData)=>{
-         if(err) throw(err);
-         fs.readFile(jsPath,"utf-8", (err, jsData)=>{
-            if(err) throw(err);
-            fs.readFile(packageJsonPath,"utf-8", (err, data) => {
-                if (err) throw err;
-                packageData = JSON.parse(data);
-                let dependencies = packageData.dependencies;
-                let devDependencies = packageData.devDependencies;
-        
-                panel.webview.html = getWebviewContent(context, cssData, jsData, data);
-              });
-         })
-      })
+      const manifest = extensionPath+"/react/build/asset-manifest.json";
+        fs.readFile(manifest, "utf-8", (err, manifestData)=>{
+          fs.readFile(packageJsonPath,"utf-8", (err, data) => {
+            if (err) throw err;
+            packageData = JSON.parse(data);
+            let dependencies = packageData.dependencies;
+            let devDependencies = packageData.devDependencies;
+            panel.webview.html = getWebviewContent(context, extensionPath, manifestData, data);
+          });
+        })
     }
   );
 

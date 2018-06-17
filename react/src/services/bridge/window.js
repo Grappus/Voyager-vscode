@@ -7,9 +7,9 @@ const Prompt = (text) => {
 
 export default {
     status: (text, timeout) => {
-        // return window.vscode?
-        // window.vscode.window.setStatusBarMessage(text, timeout):
-        // alert(text);
+        return window.vscode?
+        window.vscode.window.setStatusBarMessage(text, timeout):
+        alert(text);
     },
 
     alert: (text, type, options={}) => {
@@ -18,22 +18,23 @@ export default {
                 return window.vscode?
                 window.vscode.window.showInformationMessage(text, options):
                 alert(text);
+                break;
             case 'info':
                 return window.vscode?
                 window.vscode.window.showInformationMessage(text, options):
                 alert(text);
+                break;
             case 'error':
                 return window.vscode?
                 window.vscode.window.showErrorMessage(text, options):
                 alert(text);
+                break;
             case 'warning':
                 return window.vscode?
                 window.vscode.window.showWarningMessage(text, options):
                 alert(text);
+                break;
             default:
-                return window.vscode?
-                window.vscode.window.showInformationMessage(text, options):
-                alert(text);
 
         }
     },

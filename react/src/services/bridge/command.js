@@ -12,8 +12,8 @@ export default {
         else{
             return new Promise((resolve, reject) => {
                 setTimeout(()=>{
-                    alert('command executed successfully');
-                },1000)
+                    resolve('command executed successfully', 1000);
+                })
             })
         }
     }

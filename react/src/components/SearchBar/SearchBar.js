@@ -34,7 +34,7 @@ class SearchBar extends Component {
   }
 
   setSearch = (e) => {
-    if(e.target.value===""){
+    if(e.target.value==""){
       return this.setState({
         suggestions: [],
         search: ""

@@ -43,7 +43,7 @@ export default {
         {key: 'repository', value: packageFile.repository && packageFile.repository.uri}
     ],
     getDependencies: () => {
-        if(typeof packageFile.dependencies  === 'object')
+        if(typeof packageFile.dependencies  == 'object')
             return Object.keys(packageFile.dependencies).map(key => ({
                         name: key,
                         version: packageFile.dependencies[key]
@@ -52,7 +52,7 @@ export default {
     },
     
     getDevDependencies: () => {
-        if(typeof packageFile.devDependencies  === 'object')
+        if(typeof packageFile.devDependencies  == 'object')
             return Object.keys(packageFile.devDependencies).map(key => ({
                 name: key,
                 version: packageFile.devDependencies[key]
@@ -61,7 +61,7 @@ export default {
     },
 
     getScripts: () => {
-        if(typeof packageFile.scripts  === 'object')
+        if(typeof packageFile.scripts  == 'object')
         return Object.keys(packageFile.scripts).map(key => ({
             key,
             value: packageFile.scripts[key]

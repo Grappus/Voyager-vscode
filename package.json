@@ -22,7 +22,9 @@
     },
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "node ./node_modules/vscode/bin/test"
+        "test": "node ./node_modules/vscode/bin/test",
+        "dev": "cd react && npm start",
+        "build": "cd react && npm run build"
     },
     "devDependencies": {
         "typescript": "^2.6.1",

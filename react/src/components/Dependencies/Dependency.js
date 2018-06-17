@@ -11,7 +11,7 @@ export default class Dependency extends Component {
 
 
 
-  UNSAFE_componentWillMount = () => {
+  componentWillMount = () => {
     npmService.getPackageDetail(this.props.name)
     .then(res => {
         this.setState({
@@ -22,7 +22,7 @@ export default class Dependency extends Component {
 
 
  parseVersion= (version) => {
-  if(version[0]==="^"){
+  if(version[0]=="^"){
     return <span>{version.substring(1, version.length)} <span style={{opacity:0.5}}> + </span> </span>
   }
   return <span> {version} </span>
@@ -34,7 +34,7 @@ export default class Dependency extends Component {
    })
  }
  onKeyDown = (e) =>{
-   if(e.key==='Enter'){
+   if(e.key=='Enter'){
      this.toggleVersionInput()
    }
  }
@@ -42,15 +42,15 @@ export default class Dependency extends Component {
  getColor = (version) => {
    if(this.state.pkg){ 
      let refVersion = this.state.pkg.collected.metadata.version;
-      if(version[0] === "^")
+      if(version[0] == "^")
       version = version.substring(1, version.length)
-      else if(refVersion[0] === '^')
+      else if(refVersion[0] == '^')
           refVersion = refVersion.substring(1, refVersion.length)
       
       version = version.split('.');
       refVersion = refVersion.split('.');
-      if( Number(refVersion[0] === Number(version[0])) ){
-         if( Number(refVersion[1]) === Number(version[1]) )
+      if( Number(refVersion[0] == Number(version[0])) ){
+         if( Number(refVersion[1]) == Number(version[1]) )
             return 'green'
          else
             return '#7d7d24'
@@ -69,10 +69,10 @@ export default class Dependency extends Component {
         <div className="dependency--version">
           { this.state.editVersion ?
              <input onKeyDown={this.onKeyDown} type="text" className="version" defaultValue={this.props.version || '16.3.0'} ></input>:
-             <span className="version-span" onClick={this.toggleVersionInput}> {(this.props.version && this.parseVersion(this.props.version)) || '16.3.0'} </span>
+             <span className="version-span" onClick={this.toggleVersionInput}> {this.props.version && this.parseVersion(this.props.version) || '16.3.0'} </span>
           }
           { <span className={cn("latest-version", {active:this.state.pkg})} style={{backgroundColor: this.getColor( this.props.version)}} > 
-                {(this.state.pkg && this.state.pkg.collected && this.state.pkg.collected.metadata.version) || '16.3.1'} 
+                {this.state.pkg && this.state.pkg.collected && this.state.pkg.collected.metadata.version || '16.3.1'} 
             </span>
           }
         </div>

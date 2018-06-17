@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import SearchBar from './../SearchBar/SearchBar'
 import PackageDetail from './../PackageDetail/PackageDetail'
+import Dependencies from './../Dependencies/Dependencies';
 import './Home.css'
 import cn from 'classnames';
 import Tabs from '../../routes/tabs'
@@ -21,7 +22,7 @@ export default class Home extends Component {
   }
 
   selectTab = (tab_name) =>{
-    let tab = this.tabs.find(tab => tab.name===tab_name);
+    let tab = this.tabs.find(tab => tab.name==tab_name);
     this.setState({
       active_tab: tab
     })
@@ -62,7 +63,7 @@ export default class Home extends Component {
                    this.tabs.map(tab =>(
                      <li 
                      onClick={() => this.setState({active_tab: tab})}
-                     className={cn("key-list-item", {active: this.state.active_tab.name===tab.name})} > 
+                     className={cn("key-list-item", {active: this.state.active_tab.name==tab.name})} > 
                       {tab.label} {tab.count? `(${tab.count()})`: null}
                      </li>
                    ))

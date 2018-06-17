@@ -3,6 +3,12 @@
     "displayName": "Voyager",
     "description": "Never touch package.json again",
     "version": "0.0.1",
+    "homepage": "https://github.com/anish000kumar/vscode-package-explorer",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/anish000kumar/vscode-package-explorer"
+    },
+    "icon": "images/voyager-dark.png",
     "publisher": "anish",
     "engines": {
         "vscode": "^1.24.0"
@@ -18,7 +24,11 @@
         "commands": [
             {
                 "command": "extension.managePackage",
-                "title": "Manage Packages"
+                "title": "Voyager",
+                "icon": {
+                    "light": "./images/voyager-light.png",
+                    "dark": "./images/voyager-dark.png"
+                }
             }
         ]
     },

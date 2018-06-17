@@ -42,7 +42,7 @@ export default class Home extends Component {
       return <Tab onSelect={(dep)=> this.selectPackage(dep)} />
     };
     return (
-      <div className="explorer-home">
+      <div className="explorer-home"> 
           <div className="home--header">
             <div className="left">
                 <div className="project-icon"></div>

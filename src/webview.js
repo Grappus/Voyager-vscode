@@ -33,7 +33,7 @@ module.exports = function getWebviewContent(
                     --bg-color: rgb(12, 28, 49);
                     --color: #fff;
                     --font-xs: 10px;
-                    --font-sm: 12px;
+                    --font-sm: 13px;
                     --font-md: 15px;
                     --font-lg: 20px;
                     --font-xl: 30px;

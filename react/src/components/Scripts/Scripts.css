@@ -23,13 +23,13 @@
 }
 
 .command-name{
-    font-size: var(--font-md);
+    font-size: var(--font-sm);
     color: #eee;
     margin-right: 20px;
 }
 .command-value{
     opacity: 0;
-    font-size: var(--font-md);
+    font-size: var(--font-sm);
     flex:1;
     transition: all 0.3s ease;
 }

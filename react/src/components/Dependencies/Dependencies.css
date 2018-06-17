@@ -1,11 +1,16 @@
 .dependencies{
-    min-width: 700px;
+    min-width: 500px;
+    max-height: 550px;
+    max-width: 800px;
+    width: calc(100% - 40px);
+    position: relative;
 }
 
 .dependency{
     width: 100%;
     display: flex;
     padding: 3px 20px;
+    line-height: 20px;
     cursor: pointer;
     justify-content: space-between;
     align-items: center;
@@ -14,9 +19,10 @@
 }
 
 .dependency--name{
-    font-size: var(--font-md);
+    font-size: var(--font-sm);
     letter-spacing: 1px;
     width: 30%;
+    flex: 1;
     color: #eee;
 }
 
@@ -24,7 +30,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: var(--font-md);
+    font-size: var(--font-sm);
     color: #eee;
 }
 
@@ -97,4 +103,18 @@
     font-weight: bolder;
     letter-spacing: 1.3px;
     opacity: 0.3;
+}
+.dependencies-list{
+    max-height: 500px;
+    overflow: auto;
+    position: relative;
+    padding-bottom: 100px;
+}
+.shader{
+    height: 80px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left:0;
+    background: linear-gradient(to top, var(--bg-color),  transparent )
 }

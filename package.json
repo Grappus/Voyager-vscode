@@ -1,7 +1,7 @@
 {
-    "name": "package-manager",
-    "displayName": "packageManager",
-    "description": "Manage package.json with GUI in visual studio code",
+    "name": "Voyager",
+    "displayName": "Voyager",
+    "description": "Never touch package.json again",
     "version": "0.0.1",
     "publisher": "anish",
     "engines": {
@@ -36,8 +36,10 @@
         "@types/mocha": "^2.2.42"
     },
     "dependencies": {
+        "fingerprintjs2": "^1.8.0",
         "node-cmd": "^3.0.0",
         "pkg-explorer": "file:react",
-        "react": "^16.4.1"
+        "react": "^16.4.1",
+        "underscore": "^1.9.1"
     }
 }

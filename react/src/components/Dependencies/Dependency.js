@@ -97,7 +97,7 @@ export default class Dependency extends Component {
              <span className="version-span" onClick={this.toggleVersionInput}> {this.props.version && this.parseVersion(this.props.version) || '16.3.0'} </span>
           }
           { 
-            <a href={this.state.pkg && this.state.pkg.collected.metadata.links.repository+"/releases"} >
+            <a onClick={e=> e.stopPropagation() } href={this.state.pkg && this.state.pkg.collected.metadata.links.repository+"/releases"} >
               <span className={cn("latest-version", {active:this.state.pkg})} style={{backgroundColor: this.getColor( this.props.version)}} > 
                 {this.state.pkg && this.state.pkg.collected && this.state.pkg.collected.metadata.version || '16.3.1'} 
               </span>

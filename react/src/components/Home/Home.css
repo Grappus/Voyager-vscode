@@ -46,7 +46,7 @@
 .home--body .sidebar{
     padding-top: 30px;
     min-height: 800px;
-    width: 300px;
+    width: 220px;
     box-sizing: border-box;
     /* border-right: 2px solid rgba(255,255,255,0.2); */
 }
@@ -64,7 +64,7 @@
     font-weight: 100;
     padding: 10px;
     background: rgba(0,0,0,0);
-    font-size: 15px;
+    font-size: var(--font-sm);
     /* text-align: right; */
 }
 .sidebar .key-list-item.active{

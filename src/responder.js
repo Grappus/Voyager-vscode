@@ -5,6 +5,8 @@ const fs = require("fs");
 const rootPath = vscode.workspace.workspaceFolders[0];
 const packageJsonPath = rootPath.uri.path + "/package.json";
 
+const mvToDir = `cd ${rootPath.uri.path}`;
+
 const status = message => vscode.window.setStatusBarMessage(message);
 const output = data => {
   const outputChannel = vscode.window.createOutputChannel("Voyager");
@@ -20,7 +22,7 @@ const actions = {
   //{type, script}
   RUN_SCRIPT(message) {
     status("Running script: " + message.script);
-    cmd.get(message.script, (err, data, stderr) => {
+    cmd.get(mvToDir +" && "+ message.script, (err, data, stderr) => {
       status("");
       if (err) return alert.error(err.message);
       alert.success("Script executed successfully: " + message.script);
@@ -29,9 +31,10 @@ const actions = {
 
   //{type, version?, name, mode}
   INSTALL_PACKAGE(message) {
+    
     const command = message.version 
-      ? `npm install ${message.name}@${message.version} ${message.mode}`
-      :`npm install ${message.name} ${message.mode}`
+      ? `${mvToDir} && npm install ${message.name}@${message.version} ${message.mode}`
+      :`${mvToDir} && npm install ${message.name} ${message.mode}`
     status("Running: " + command);
     cmd.get(command, (err, data, stderr) => {
       status("");
@@ -43,7 +46,7 @@ const actions = {
 
   //{type, package, mode}
   UNINSTALL_PACKAGE(message) {
-    const command = `npm uninstall ${message.package} --save --save-dev`;
+    const command = `${mvToDir} && npm uninstall ${message.package} --save --save-dev`;
     status("Running: " + command);
     cmd.get(command, (err, data, stderr) => {
       status("");
@@ -69,6 +72,6 @@ const actions = {
   }
 };
 
-module.exports = message => {
-  return actions[message.type](message);
+module.exports = (message, context) => {
+  return actions[message.type](message, context);
 };

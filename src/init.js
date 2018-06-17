@@ -17,7 +17,7 @@ module.exports = (context) => {
         { enableScripts: true, retainContextWhenHidden: true }
       );
       // And set its HTML content
-      panel.webview.onDidReceiveMessage(responder, null, disposable);
+      panel.webview.onDidReceiveMessage((message) => responder(message, context), null, disposable);
       const extensionPath = context.extensionPath;
       const manifest = extensionPath + "/react/build/asset-manifest.json";
       fs.readFile(manifest, "utf-8", (err, manifestData) => {

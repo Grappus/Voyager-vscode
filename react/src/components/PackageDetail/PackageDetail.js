@@ -46,6 +46,37 @@ class PackageDetail extends Component {
     pkg: null
   };
 
+  install = (mode) => {
+    const pkg = this.props.pkg;
+    window.vscode &&
+    window.vscode.postMessage({
+      type: 'INSTALL_PACKAGE',
+      name: pkg.name,
+      mode
+    })
+  }
+
+  uninstall = (mode) => {
+    const pkg = this.props.pkg;
+    window.vscode &&
+    window.vscode.postMessage({
+      type: 'UNINSTALL_PACKAGE',
+      name: pkg.name,
+      mode
+    })
+  }
+
+  update = (mode) => {
+    const pkg = this.props.pkg;
+    window.vscode &&
+    window.vscode.postMessage({
+      type: 'INSTALL_PACKAGE',
+      version: pkg.version,
+      name: pkg.name,
+      mode
+    })
+  }
+
   onFocus() {
     debugger;
     this.setState({
@@ -126,9 +157,11 @@ class PackageDetail extends Component {
                 >
                   <span>Weekly Downloads</span>
                   <span>
-                    {npm.downloads &&
+                    { 
+                      npm.downloads &&
                       npm.downloads[1] &&
-                      this.formatCount(npm.downloads[1].count)}
+                      this.formatCount(npm.downloads[1].count)
+                    }
                   </span>
                 </a>
               )}
@@ -173,8 +206,8 @@ class PackageDetail extends Component {
           <div className="sidebar menu-sidebar">
             <div className="sidebar-inner">
               <div className="tags-container">
-                <div className="tag-b">-save</div>
-                <div className="tag-b">-save-dev</div>
+                <div onClick={ e => this.install("--save")} className="tag-b">--save</div>
+                <div onClick={ e => this.install("--save-dev")} className="tag-b">--save-dev</div>
               </div>
 
               <div className="links-container">

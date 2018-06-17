@@ -29,14 +29,15 @@ const actions = {
 
   //{type, version?, name, mode}
   INSTALL_PACKAGE(message) {
-    const command = message.version
-      ? `npm install ${message.name} ${message.mode}`
-      : `npm install ${message.name}@${message.version} ${message.mode}`;
+    const command = message.version 
+      ? `npm install ${message.name}@${message.version} ${message.mode}`
+      :`npm install ${message.name} ${message.mode}`
     status("Running: " + command);
     cmd.get(command, (err, data, stderr) => {
       status("");
+      output(data);
       if (err) return alert.error(err.message);
-      alert.success("Package installed successfully: " + message.pcakage);
+      alert.success("Package installed successfully: " + message.name);
     });
   },
 

@@ -49,6 +49,7 @@
     background: rgba(0,0,0,0.5);
     padding: 10px 20px;
     margin: 15px 0;
+    cursor: pointer;
     /* width: 100%; */
     display: flex;
     justify-content: center;

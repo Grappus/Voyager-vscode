@@ -17,7 +17,7 @@ export default class ListItem extends Component {
     window.vscode && window.vscode.postMessage({
       type: 'UPDATE_PACKAGE_JSON',
       key: this.props.item.key,
-      value: this.props.item.value
+      value: e.target.value
     })
   }
 

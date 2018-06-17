@@ -46,6 +46,9 @@ module.exports = function getWebviewContent(
                   justify-content: center;
                   align-items: center;
                 }
+                a:focus, input:focus{
+                  outline: none;
+                }
             </style>   
             <link href="${cssPath}" type="text/css"  rel="stylesheet" />
         </head>

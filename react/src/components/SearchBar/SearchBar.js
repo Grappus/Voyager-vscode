@@ -17,6 +17,12 @@ class SearchBar extends Component {
     search: ''
   }
 
+  onInstall=()=>{
+    this.setState({
+      suggestions: []
+    })
+  }
+
   handleClickOutside() {
     this.setState({
       suggestions: [],
@@ -62,7 +68,7 @@ class SearchBar extends Component {
             <div className="search--bottom">
                 <div className="search--pacakge">
                   {
-                    this.state.suggestions.map(sug => <Package onClick={()=> this.props.onSelectPackage(sug.package) } pkg={sug.package} />)
+                    this.state.suggestions.map(sug => <Package onInstall={this.onInstall} onClick={()=> this.props.onSelectPackage(sug.package) } pkg={sug.package} />)
                   }
                 </div>
             </div>

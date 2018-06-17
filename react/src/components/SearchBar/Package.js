@@ -4,13 +4,16 @@ import moment from 'moment';
 
 export default class Package extends React.Component{
 
-  install = (mode) =>{
+  install = (e, mode) =>{
+    e.stopPropagation();
+    e.preventDefault();
     window.vscode &&
     window.vscode.postMessage({
       type: "INSTALL_PACKAGE",
       name: this.props.pkg.name,
       mode
     })
+    this.props.onInstall();
   }
 
   render(){
@@ -24,8 +27,8 @@ export default class Package extends React.Component{
               <p className="package--update"> { 'Last updated '+moment(pkg.date).fromNow() } </p>
           </div>
           <div className="package--controls">
-              <button onClick={e => this.install('--save')} className="mar-10"> save </button>
-              <button onClick={e => this.install('--save-dev')} className="mar-10"> save-dev </button>
+              <button onClick={e => this.install(e, '--save')} className="mar-10"> save </button>
+              <button onClick={e => this.install(e, '--save-dev')} className="mar-10"> save-dev </button>
           </div>
       </div>)
     )

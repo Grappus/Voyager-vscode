@@ -1,0 +1,35 @@
+.list--component{
+    min-width: 700px;
+}
+
+.listitem--component{
+    display: flex;
+}
+
+.items-list{
+    margin-top: 20px;
+}
+
+.list-input{
+    padding: 10px 20px;
+    border: none;
+    background: transparent;
+    font-size: var(--font-md);
+    letter-spacing: 1px;
+    outline: none;
+    color: #eee;
+    flex:1;
+    width: 50%;
+    font-weight: lighter;
+    height: 100%;
+}
+.list-input::-moz-placeholder{
+    color: #eee;
+}
+.list-input::placeholder{
+    color: #eee;
+}
+
+.list-input:focus{
+    background: rgba(0,0,0,0.3);
+}

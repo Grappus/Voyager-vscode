@@ -1,0 +1,39 @@
+.list--component{
+    min-width: 700px;
+}
+
+.command--component{
+    display: flex;
+    /* justify-content: space-between; */
+    padding: 10px;
+    background: rgba(0,0,0,0.3);
+    margin-bottom: 10px;
+    cursor: pointer;
+    letter-spacing: 1.5px;
+    font-weight: 100;
+}
+
+.items-list{
+    margin-top: 10px;
+}
+
+.caret-right{
+    opacity: 0.5;
+    margin-right: 10px;
+}
+
+.command-name{
+    font-size: var(--font-md);
+    color: #eee;
+    margin-right: 20px;
+}
+.command-value{
+    opacity: 0;
+    font-size: var(--font-md);
+    flex:1;
+    transition: all 0.3s ease;
+}
+
+.command-value:hover{
+    opacity: 1;
+}

@@ -1,0 +1,49 @@
+.package--data{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 100%;
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+}
+.package--body{
+    display: flex;
+    margin-right: 10px;
+    flex-direction: column;
+}
+.package--body h3.package--name{
+    font-size: var(--font-lg);
+    cursor: pointer;
+    letter-spacing: 1.5px;
+    font-weight: lighter;
+    margin-top: 10px;
+    margin-bottom: 0;
+    /* text-decoration: underline; */
+}
+.package--body h3.package--name small{
+    font-size: var(--font-md);
+    font-weight: lighter;
+    opacity: 0.5;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+.package--body .package--description{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    opacity: 0.8;
+    font-size: var(--font-md);
+    line-height: 20px;
+    letter-spacing: 0.7px;
+}
+.package--body .package--update{
+    font-size: var(--font-sm);
+    letter-spacing: 0.8px;
+    margin: 0;
+    opacity: 0.5;
+}   
+
+.package--controls{
+    display: flex;
+    flex-direction: column;
+}

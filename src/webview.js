@@ -10,27 +10,16 @@ module.exports = function getWebviewContent(
 ) {
   manifestData = JSON.parse(manifestData);
   const cssPath = vscode.Uri.file(
-    path.join(
-      extensionPath,
-      "react",
-      "build",
-      manifestData["main.css"]
-    )
+    path.join(extensionPath, "react", "build", manifestData["main.css"])
   ).with({
     scheme: "vscode-resource"
   });
 
   const jsPath = vscode.Uri.file(
-    path.join(
-      extensionPath,
-      "react",
-      "build",
-      manifestData["main.js"]
-    )
+    path.join(extensionPath, "react", "build", manifestData["main.js"])
   ).with({
     scheme: "vscode-resource"
   });
-
 
   return `
   <!DOCTYPE html>
@@ -44,7 +33,9 @@ module.exports = function getWebviewContent(
         <body>
             <div id="root"></div>
             <script>
-                var packageData = ${packageData} ;
+                var packageFile = ${JSON.stringify(packageData)} ;
+                var vscode = true;
+                console.log(window.packageFile, window.vscode);
             </script>
             <script src="${jsPath}" />
         </body>

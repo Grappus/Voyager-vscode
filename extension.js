@@ -24,7 +24,7 @@ function activate(context) {
             packageData = JSON.parse(data);
             let dependencies = packageData.dependencies;
             let devDependencies = packageData.devDependencies;
-            panel.webview.html = getWebviewContent(context, extensionPath, manifestData, data);
+            panel.webview.html = getWebviewContent(context, extensionPath, manifestData, packageData);
           });
         })
     }

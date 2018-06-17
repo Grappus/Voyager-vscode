@@ -24,8 +24,8 @@ export default class Package extends React.Component{
               <p className="package--update"> { 'Last updated '+moment(pkg.date).fromNow() } </p>
           </div>
           <div className="package--controls">
-              <button onClick={e => install('--save')} className="mar-10"> save </button>
-              <button onClick={e => install('--save-dev')} className="mar-10"> save-dev </button>
+              <button onClick={e => this.install('--save')} className="mar-10"> save </button>
+              <button onClick={e => this.install('--save-dev')} className="mar-10"> save-dev </button>
           </div>
       </div>)
     )

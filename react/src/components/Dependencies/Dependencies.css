@@ -67,6 +67,14 @@
 .dependency--version .latest-version:hover{
     opacity: 1;
 }
+.dependency--version a{
+    width: 130px;
+    color: #fff;
+    text-decoration: none;
+}
+.dependency--version span{
+    width: 130px;
+}
 
 .dependency--close{
     cursor: pointer;

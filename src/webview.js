@@ -39,11 +39,20 @@ module.exports = function getWebviewContent(
                     --font-xl: 30px;
                     --font-xxl: 45px;
                 }
+                #root{
+                  display: flex;
+                  width: 100vw;
+                  height: 100vh;
+                  justify-content: center;
+                  align-items: center;
+                }
             </style>   
             <link href="${cssPath}" type="text/css"  rel="stylesheet" />
         </head>
         <body>
-            <div id="root"></div>
+            <div id="root">
+                Loading Voyager...
+            </div>
             <script>
                 var packageFile = ${JSON.stringify(packageData)} ;
                 var vscode = acquireVsCodeApi();

@@ -16,7 +16,7 @@ export default class items extends Component {
           type="text"
           onChange={e => this.setState({ search: e.target.value })}
           className="search-input"
-          placeholder="Search (cmd+f)"
+          placeholder="Search"
           style={{ width: "100%" }}
         />
         <div className="items-list">

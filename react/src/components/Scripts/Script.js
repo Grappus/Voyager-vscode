@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import {command, window} from '../../services/bridge';
 
 export default class ListItem extends Component {
 
-  runCommand= () => {
-    command.run(`npm run ${this.props.item}`)
-    .then(res => {
-      window.status(res);
-    })
+ runCommand = (script) => {
+    window.vscode ? window.vscode.postMessage({
+      type: 'RUN_SCRIPT',
+      script: `npm run ${this.props.item.key}`
+    }):
+    alert('npm run '+ this.props.item.key)
   }
 
   render() {

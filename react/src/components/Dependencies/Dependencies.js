@@ -22,7 +22,7 @@ export default class Dependencies extends Component {
         <div className="dependencies-list">
           { (filtered_deps && filtered_deps.length> 0)
             ? filtered_deps.map(dep => (
-                <Dependency name={dep.name} version={dep.version} />
+                <Dependency onClick={e => this.props.onSelect(dep)} name={dep.name} version={dep.version} />
               ))
             : <div className="no-package"> Nothing here! </div>}
         </div>

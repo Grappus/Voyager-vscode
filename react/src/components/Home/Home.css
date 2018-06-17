@@ -14,7 +14,7 @@
     box-sizing: border-box;
     background: rgba(0,0,0,0.1);
 }
-@media(max-width: 1250px){
+@media(max-width: 1000px){
     .home--header{
         flex-direction: column;
     }

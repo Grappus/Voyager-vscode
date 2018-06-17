@@ -37,7 +37,10 @@ export default class Home extends Component {
   }
 
   render() {
-    const ActiveTab = () => Tabs[this.state.active_tab.name];
+    const ActiveTab = () => {
+      let Tab = Tabs[this.state.active_tab.name]
+      return <Tab onSelect={(dep)=> this.selectPackage(dep)} />
+    };
     return (
       <div className="explorer-home">
           <div className="home--header">

@@ -28,14 +28,25 @@ module.exports = function getWebviewContent(
             <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
             <meta name="theme-color" content="#000000"><link rel="manifest" href="/manifest.json">
             <link rel="shortcut icon" href="./favicon.ico"><title>React App</title>
+            <style>
+                :root {
+                    --bg-color: rgb(12, 28, 49);
+                    --color: #fff;
+                    --font-xs: 10px;
+                    --font-sm: 12px;
+                    --font-md: 15px;
+                    --font-lg: 20px;
+                    --font-xl: 30px;
+                    --font-xxl: 45px;
+                }
+            </style>   
             <link href="${cssPath}" type="text/css"  rel="stylesheet" />
         </head>
         <body>
             <div id="root"></div>
             <script>
                 var packageFile = ${JSON.stringify(packageData)} ;
-                var vscode = true;
-                console.log(window.packageFile, window.vscode);
+                var vscode = acquireVsCodeApi();
             </script>
             <script src="${jsPath}" />
         </body>

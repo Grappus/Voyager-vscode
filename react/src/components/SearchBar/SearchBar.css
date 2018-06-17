@@ -8,6 +8,7 @@
 .search--top{
     display: flex;
     margin-left: auto;
+    align-self: flex-end;
 }
 
 .search--top .search--platform{
@@ -18,10 +19,10 @@
     line-height: 40px;
     letter-spacing: 1.5px;
 }
-@media(max-width: 1250px){
+@media(max-width: 1000px){
     .search--top{
         margin-top: 20px;
-        margin-left: unset;
+        /* margin-left: auto; */
     }
 }
 

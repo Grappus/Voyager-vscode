@@ -6,6 +6,7 @@
     width: 100%;
     display: flex;
     padding: 3px 20px;
+    cursor: pointer;
     justify-content: space-between;
     align-items: center;
     background: rgba(255, 255, 255, 0.03);

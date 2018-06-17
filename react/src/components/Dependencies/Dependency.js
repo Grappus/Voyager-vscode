@@ -64,7 +64,7 @@ export default class Dependency extends Component {
 
   render() {
     return (
-      <div className="dependency">
+      <div className="dependency" onClick={this.props.onClick}>
         <span className="dependency--name"> {this.props.name|| 'react'} </span>
         <div className="dependency--version">
           { this.state.editVersion ?

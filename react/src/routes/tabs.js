@@ -5,10 +5,10 @@ import List from '../components/List/List'
 import Scripts from '../components/Scripts/Scripts'
 
 const Tabs = {
-	dependencies: <Dependencies dependencies={packageService.getDependencies()}/>,
-    devDependencies: <Dependencies dependencies={packageService.getDevDependencies()}/>,
-    info: <List items={packageService.getInfo()} />,
-    scripts: <Scripts items={packageService.getScripts()} />,
+	dependencies: ({onSelect}) => <Dependencies onSelect={dep => onSelect(dep) } dependencies={packageService.getDependencies()}/>,
+    devDependencies: ({onSelect}) => <Dependencies onSelect={dep => onSelect(dep)} dependencies={packageService.getDevDependencies()}/>,
+    info: () => <List items={packageService.getInfo()} />,
+    scripts: ()=> <Scripts items={packageService.getScripts()} />,
 };
 
 export default Tabs;

@@ -1,6 +1,8 @@
 # VSCODE-PACKAGE-EXPLORER
 vscode extension to add, search, remove, update packages without touching terminal, package.json or browser.
-<img src="https://image.ibb.co/btV1cy/freegifmaker_me_2ck6_L.gif" alt="Preview"/>
+<div style="display:flex; justify-content:center; align-items:center">
+    <img src="https://image.ibb.co/btV1cy/freegifmaker_me_2ck6_L.gif" alt="Preview"/>
+</div>
 Preview: https://youtu.be/lzQSTkQHTY0
 
 ### Here are some of the major purposes it serves:

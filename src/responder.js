@@ -22,7 +22,7 @@ const actions = {
   //{type, script}
   RUN_SCRIPT(message) {
     status("Running script: " + message.script);
-    cmd.get(mvToDir +" && "+ message.script, (err, data, stderr) => {
+    cmd.get(`${mvToDir} && ${message.script}`, (err, data, stderr) => {
       status("");
       if (err) return alert.error(err.message);
       alert.success("Script executed successfully: " + message.script);

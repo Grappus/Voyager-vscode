@@ -11,7 +11,6 @@
     justify-content: space-between;
     width: 100%;
     padding: 20px;
-    padding-top: 55px;
     box-sizing: border-box;
     background: rgba(0,0,0,0.1);
 }
@@ -104,4 +103,11 @@
     transform: scale(1);
     pointer-events: unset;
     background: var(--bg-color);
+}
+.project-icon{
+    padding: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 55px;
 }

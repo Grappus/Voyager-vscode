@@ -18,7 +18,8 @@ export default class Home extends Component {
 
   state = {
     active_tab:   { name: 'info', label: 'Info',  },
-    active_package: null
+    active_package: null,
+    offsetTop: 0
   }
 
   selectTab = (tab_name) =>{
@@ -26,6 +27,14 @@ export default class Home extends Component {
     this.setState({
       active_tab: tab
     })
+  }
+
+  componentDidMount(){
+    let offsetTop = this.mainDiv.offsetTop;
+    this.setState({
+      offsetTop
+    })
+    debugger
   }
 
   selectPackage = (pkg) =>{
@@ -41,14 +50,17 @@ export default class Home extends Component {
       let Tab = Tabs[this.state.active_tab.name]
       return <Tab onSelect={(dep)=> this.selectPackage(dep)} />
     };
+    const data = packageService.getRawObject() ;
     return (
-      <div className="explorer-home"> 
+      <div ref={(e)=> this.mainDiv = e } className="explorer-home" style={{paddingTop: 2*this.state.offsetTop+'px'}}> 
           <div className="home--header">
             <div className="left">
-                <div className="project-icon"></div>
+                <div className="project-icon">
+                  <i className={`devicon-${packageService.getIcon()}`}></i>
+                </div>
                 <div className="project-data">
-                  <h3>Hello World</h3>
-                  <p>https://github.com/anish000kumar/hello-world.git</p>
+                  <h3>{ (data && data.name) || '<No Name>' }</h3>
+                  <a href={data && data.homepage}>{ (data && data.homepage) || '<No homepage mentioned>'}</a>
                 </div>
             </div>
             <div className="right">

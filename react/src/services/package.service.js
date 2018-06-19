@@ -184,20 +184,25 @@ export default {
     return [];
   },
 
-  updatePackageFile: (key, data) => {
-    if (window.fs && window.rootPath) {
-      let pkgData = JSON.parse(JSON.stringify(packageFile));
-      pkgData.key = data;
-      window.fs.writeFile(
-        window.rootPath + "/package.json",
-        JSON.stringify(data, null, 4),
-        function(err) {
-          if (err) {
-            console.log(err);
-          }
-          console.log("file updated");
-        }
-      );
+  getIcon(){
+    let icons = {
+      react: "react-original",
+      vue: "vuejs-plain",
+      angular: "angularjs-plain",
+      meteor: "meteor-plain",
+      backbone: "backbonejs-plain",
+      express: "express-original",
+      node: "nodejs-plain",
     }
+    let icon = "javascript-plain";
+    Object.keys(icons).every(framework=>{
+       if (Object.keys(packageFile.dependencies).includes(framework)){
+         debugger
+          icon = icons[framework]
+          return false;
+       }
+    })
+    return icon;
   }
+
 };

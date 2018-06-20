@@ -5,6 +5,9 @@ vscode extension to add, search, remove, update packages without touching termin
 </div>
 Preview: https://youtu.be/lzQSTkQHTY0
 
+## Usage
+Simply install the plugin "Voyager", to use press ctrl+shift+p or cmd+shift+p and search for "Voyager".
+
 ### Here are some of the major purposes it serves:
 1. Reads package.json and presents the details in a separate, friendly view, allowing you to edit the values.
 2. Lets you discover, search for packages from npm.

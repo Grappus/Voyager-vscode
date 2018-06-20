@@ -6,7 +6,7 @@ vscode extension to add, search, remove, update packages without touching termin
 Preview: https://youtu.be/lzQSTkQHTY0
 
 ### Here are some of the major purposes it serves:
-1. Reads package.json and presents the details in a seperate, friendly view, allowing you to edit the values.
+1. Reads package.json and presents the details in a separate, friendly view, allowing you to edit the values.
 2. Lets you discover, search for packages from npm.
 3. Shows the readme, stats and links for any package within VSCode without switching to browser.
 4. Lets you install/uninstall/update dependencies with clicks, without switching to terminal

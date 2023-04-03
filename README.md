@@ -1,3 +1,6 @@
+## Deprecated 
+Package has been deprecated in favour of [easy npm](https://marketplace.visualstudio.com/items?itemName=anish.easy-npm).
+
 # Voyager (VSCODE Plugin)
 vscode extension to add, search, remove, update packages without touching terminal, package.json or browser.
 <div style="display:flex; justify-content:center; align-items:center">
